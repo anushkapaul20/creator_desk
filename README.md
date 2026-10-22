@@ -4,13 +4,13 @@ Creator Desk is a local-first workspace for creator discovery, outreach, campaig
 
 ## Run locally
 
-No API keys or paid services are required. Serve this folder with any static HTTP server. For example:
+Requires Node.js 18 or newer. No package installation, API keys, or paid services are required. From the project folder run:
 
-```powershell
-python -m http.server 4173
+```sh
+npm run dev
 ```
 
-Then open [http://localhost:4173](http://localhost:4173).
+Then open [http://localhost:4173](http://localhost:4173). The server binds to loopback so it is only available on your computer. You can also serve the folder with another static HTTP server if you prefer.
 
 ## Features
 
