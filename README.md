@@ -1,79 +1,31 @@
-# SitePulse AI
+# Creator Desk
 
-SitePulse AI turns construction and interior-site updates into structured progress reports. It gives site teams a clear view of completed work, active work, material shortages, risks, and next actions.
-
-## Features
-
-- Create daily site updates in plain English, with optional material notes, blockers, and photos.
-- Extract completed, in-progress, pending, material, issue, risk, and action signals.
-- Generate polished daily reports per project.
-- Search report history by project, work activity, material, or issue.
-- Track recommended actions with a persistent completion checklist.
-- Print reports or save them as PDFs directly from the browser.
-- View portfolio health, recent activity, material issues, and priority risks.
-- Ask project-specific questions using saved updates, not generic answers.
-- Keep demo data locally in the browser with no backend or API key required.
-
-## Resume-ready highlights
-
-- Built a responsive multi-project construction operations dashboard with vanilla JavaScript.
-- Designed a local-first data model for site updates, reports, task ownership, milestone plans, safety checks, and backup/restore.
-- Implemented explainable update analysis that turns unstructured site language into project signals and next actions.
-- Added an interactive delivery workspace with task assignments, priority handling, schedule milestones, weekly manager digests, and report export.
-- Built a logistics command center for vendor deliveries, material dependencies, and resolution-tracked issue registers.
-- Added portfolio analytics with delivery pace, project signals, risk exposure, and operational KPIs.
+Creator Desk is a local-first workspace for creator discovery, outreach, campaign planning, deliverable tracking, and personalized DM and email templates.
 
 ## Run locally
 
-From this folder:
+No API keys or paid services are required. Serve this folder with any static HTTP server. For example:
 
 ```powershell
 python -m http.server 4173
 ```
 
-Open [http://localhost:4173](http://localhost:4173). Stop the server with `Ctrl + C`.
+Then open [http://localhost:4173](http://localhost:4173).
 
-## Usage
+## Features
 
-1. Go to **Daily update** and choose a project.
-2. Paste or write the supervisor's update in plain English.
-3. Add material details, blockers, and optional photos.
-4. Select **Analyze & create report**.
-5. In **Reports**, use search, complete action checklist items, or select **Print / save PDF**.
-6. Ask the assistant about urgent materials, delays, recent completed work, or tomorrow's priorities.
+- Dashboard metrics and charts are calculated from workspace records.
+- Creator profiles with search, filters, CRUD forms, profile links, and CSV export.
+- Outreach status tracking, follow-up dates, and response-rate calculation.
+- Campaign planning with progress based on published deliverables.
+- Deliverable deadlines, approvals, publication links, and payment statuses.
+- Ten editable outreach templates with creator and campaign personalization.
+- Local browser storage, JSON backup and restore, and sample demo records.
 
-## Technology
+## Data and privacy
 
-- HTML, CSS, and vanilla JavaScript
-- Browser `localStorage` for persistence
-- Lucide icons
+Workspace records are stored in the current browser using `localStorage`. They are not sent to a backend. Use **Settings → Download backup** to keep a portable copy of your workspace.
 
-## Product modules
+The response rate is the number of contacted outreach records with a reply or subsequent response status divided by the total number of contacted outreach records. Records with **Not Contacted** status are excluded.
 
-| Module | Capabilities |
-| --- | --- |
-| Overview | Portfolio KPI cards, active risks, recent site intelligence, project health |
-| Daily update | Plain-language updates, photos, material and blocker capture, report generation |
-| Reports | Searchable report archive, action checklist, printable/PDF-ready reports |
-| Project chatbot | Persistent project-scoped chat using saved updates, plans, vendors, materials, and risks |
-| Project planner | Milestones, owned tasks, priorities, safety checklist, AI weekly digest |
-| Insights | Completion trend, risk distribution, project signals, delivery KPIs |
-| Materials & vendors | Delivery status board, supplier tracking, material dependencies, issue register |
-
-## Data handling
-
-The demo is intentionally local-first. Project data, plans, vendor records, action completion, safety checks, and issue status are stored in browser `localStorage`. The **Backup data** and **Restore** controls in Project planner support moving a complete workspace between browsers.
-
-## Project chatbot
-
-The right-side **Project assistant** is a context-aware chatbot. It keeps a separate conversation history for each project and answers using the project’s saved field updates, completed work, risks, materials, tasks, delivery records, and progress plan. Example prompts:
-
-- What is delaying this project?
-- Which materials are urgently required?
-- Who owns the high-priority tasks?
-- What work was completed this week?
-- What should we prioritize tomorrow?
-
-## Production AI integration
-
-This demo uses a transparent rules engine in `app.js` so it works without credentials. A production version can replace the `analyzeText` and `ask` functions with requests to a secure backend connected to an AI model, while retaining the same project-update structure.
+Campaign progress is the number of published deliverables divided by the total number of deliverables recorded for that campaign. Campaigns with no deliverables have no calculated progress percentage.
